@@ -60,6 +60,23 @@ class SearchVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let episodeVC = EpisodesVC()
+        let episode = podcasts[indexPath.row]
+        
+        NetworkManager.shared.getPodcastFeed(podcast: episode) { [weak self] (results) in
+            guard let self = self else { return }
+            switch results {
+                
+            case .success(let feed):
+                episodeVC.episode = feed
+                DispatchQueue.main.async {
+                    episodeVC.title = self.podcasts[indexPath.row].trackName
+                    episodeVC.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
         navigationController?.pushViewController(episodeVC, animated: true)
     }
     

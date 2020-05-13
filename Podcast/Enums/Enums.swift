@@ -9,11 +9,12 @@
 import UIKit
 
 enum images {
-   static let downloadsImage = UIImage(systemName: "icloud.and.arrow.down.fill")
+   static let downloadsImage = UIImage(named: "music-filled")
 }
 
 enum cellID {
     static let tableViewcCellID = "CellID"
+    static let episodeCellID = "cellID"
 }
 
 enum URLString {

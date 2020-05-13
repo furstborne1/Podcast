@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import FeedKit
 
 class NetworkManager {
     static let shared = NetworkManager()
@@ -28,7 +29,6 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 let results = try decoder.decode(SearchResult.self, from: data)
-                print(results)
                 completion(.success(results))
             } catch let error {
                 print(error)
@@ -37,4 +37,37 @@ class NetworkManager {
         }
     }
     
+    func getPodcastFeed(podcast: Podcast, completion: @escaping(Result<[Episode], Error>) -> ()) {
+        
+        var episode = [Episode]()
+        
+        guard let urlString = podcast.feedUrl else { return }
+        
+        let httpsURL = urlString.toHTTPS()
+        
+        guard let url = URL(string: httpsURL) else { return }
+        
+        let parser = FeedParser(URL: url)
+        parser.parseAsync { (result) in
+            switch result {
+                
+            case .success(let feed):
+                let imageURL = feed.rssFeed?.iTunes?.iTunesImage?.attributes?.href
+                feed.rssFeed?.items?.forEach({ (feedItem) in
+                    var episodes = Episode.init(episode: feedItem)
+                    
+                    if episodes.imageURL == nil {
+                        episodes.imageURL = imageURL
+                    }
+                    
+                    episode.append(episodes)
+                })
+                completion(.success(episode))
+        
+            case .failure(let error):
+                completion(.failure(error))
+                print(error)
+            }
+        }
+    }
 }

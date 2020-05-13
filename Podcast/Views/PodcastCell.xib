@@ -23,22 +23,22 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FTv-GX-McI">
-                        <rect key="frame" x="150" y="46.5" width="342" height="69"/>
+                        <rect key="frame" x="150" y="46.5" width="332" height="69"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhu-R0-g42">
-                                <rect key="frame" x="0.0" y="0.0" width="342" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zei-On-XSV">
-                                <rect key="frame" x="0.0" y="28.5" width="342" height="18"/>
+                                <rect key="frame" x="0.0" y="28.5" width="332" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYp-Sh-8Yl">
-                                <rect key="frame" x="0.0" y="54.5" width="342" height="14.5"/>
+                                <rect key="frame" x="0.0" y="54.5" width="332" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                     <constraint firstItem="HUs-xO-zby" firstAttribute="leading" secondItem="XgT-d7-T8J" secondAttribute="leading" constant="20" id="fbL-NN-nDU"/>
                     <constraint firstItem="HUs-xO-zby" firstAttribute="centerY" secondItem="XgT-d7-T8J" secondAttribute="centerY" id="jAk-av-p7d"/>
                     <constraint firstItem="FTv-GX-McI" firstAttribute="leading" secondItem="HUs-xO-zby" secondAttribute="trailing" constant="10" id="jgo-Ie-BBo"/>
-                    <constraint firstAttribute="trailing" secondItem="FTv-GX-McI" secondAttribute="trailing" id="qRL-Nq-60b"/>
+                    <constraint firstAttribute="trailing" secondItem="FTv-GX-McI" secondAttribute="trailing" constant="10" id="qRL-Nq-60b"/>
                     <constraint firstItem="FTv-GX-McI" firstAttribute="centerY" secondItem="XgT-d7-T8J" secondAttribute="centerY" id="xct-fA-Zuh"/>
                 </constraints>
             </tableViewCellContentView>
